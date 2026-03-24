@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Olimpiada Ro'yxatga Olish</title>
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #1a1a1a;
+        --muted: #6b6b6b;
+        --border: #e5e5e5;
+        --focus: #111111;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      .wrap {
+        max-width: 420px;
+        margin: 0 auto;
+        padding: 24px 16px 40px;
+      }
+
+      h1 {
+        font-size: 20px;
+        margin: 8px 0 20px;
+        font-weight: 600;
+      }
+
+      .field {
+        margin-bottom: 14px;
+      }
+
+      label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 6px;
+        color: var(--muted);
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 12px 12px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        font-size: 15px;
+        outline: none;
+        background: #fff;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: var(--focus);
+      }
+
+      button {
+        width: 100%;
+        padding: 12px 14px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        background: #111;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      .status {
+        margin-top: 12px;
+        font-size: 14px;
+      }
+
+      .note {
+        margin-top: 18px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Olimpiada uchun ro'yxatdan o'tish</h1>
+
+      <form id="regForm">
+        <div class="field">
+          <label for="ism">Ism</label>
+          <input id="ism" name="ism" type="text" required />
+        </div>
+
+        <div class="field">
+          <label for="familiya">Familiya</label>
+          <input id="familiya" name="familiya" type="text" required />
+        </div>
+
+        <div class="field">
+          <label for="maktab">Maktab</label>
+          <input id="maktab" name="maktab" type="text" required />
+        </div>
+
+        <div class="field">
+          <label for="sinf">Sinf</label>
+          <input id="sinf" name="sinf" type="text" required />
+        </div>
+
+        <div class="field">
+          <label for="olimpiada">Olimpiada turi</label>
+          <select id="olimpiada" name="olimpiada" required>
+            <option value="" disabled selected>Tanlang</option>
+            <option value="Hippo">Hippo</option>
+            <option value="Prezident maktabiga kirish sinov imtixoni">Prezident maktabiga kirish sinov imtixoni</option>
+            <option value="Ravon Muloqot ingliz tili va matematika olimpiadasi">Ravon Muloqot ingliz tili va matematika olimpiadasi</option>
+          </select>
+        </div>
+
+        <button id="submitBtn" type="submit">Yuborish</button>
+        <div id="status" class="status"></div>
+      </form>
+
+      <div class="note">Ma'lumotlar Google Sheets ga yuboriladi.</div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
